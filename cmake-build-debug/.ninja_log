@@ -1,0 +1,6 @@
+# ninja log v5
+1	1098	1667608165395290857	tests/unit/CMakeFiles/unit_test.dir/main.cpp.o	bd78c354b3cf46b4
+0	100	1667608181897268844	tests/unit/unit_test	a30d34d2cc867357
+1	1139	1667607389774554102	tests/unit/CMakeFiles/FooTest.dir/main.cpp.o	506446a568e320dd
+1	1254	1667608260665163760	tests/unit/CMakeFiles/unit_test.dir/main.cpp.o	bd78c354b3cf46b4
+1255	1354	1667608260764163627	tests/unit/unit_test	a30d34d2cc867357

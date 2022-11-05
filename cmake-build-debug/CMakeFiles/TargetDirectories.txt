@@ -1,0 +1,7 @@
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/tests/CMakeFiles/edit_cache.dir
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/tests/unit/CMakeFiles/unit_test.dir
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/tests/unit/CMakeFiles/edit_cache.dir
+/home/ivan/CLionProjects/ft_turing/cmake-build-debug/tests/unit/CMakeFiles/rebuild_cache.dir
