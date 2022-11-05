@@ -3,6 +3,8 @@ project(ft_turing)
 
 set(CMAKE_CXX_STANDARD 20)
 
+add_subdirectory(turing)
+
 if (TESTS)
     add_subdirectory(tests)
 endif ()
