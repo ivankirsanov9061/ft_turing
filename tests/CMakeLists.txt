@@ -3,6 +3,6 @@ project(tests)
 
 set(CMAKE_CXX_STANDARD 20)
 
-if (UNIT_TEST)
+if (UNIT_TESTS)
     add_subdirectory(unit)
 endif ()
