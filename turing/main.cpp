@@ -9,8 +9,8 @@ int main(int argc, char **argv)
     {
         struct SArguments arguments = ParseArguments(argc, argv, std::cout);
     }
-    catch (std::exception &e)
+    catch (std::exception &error)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << error.what() << std::endl;
     }
 }
