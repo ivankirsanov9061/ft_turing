@@ -1,11 +1,11 @@
 #include "SafeStreamWriter.h"
 
-void SafeStreamWrite(std::ostream &stream, std::string information)
+void SafeStreamWrite(std::ostream &output_stream_for_information, std::string information)
 {
-    stream.write(information.c_str(), information.size());
+    output_stream_for_information.write(information.c_str(), information.size());
 
-    if (stream.exceptions() == std::ios_base::failbit)
+    if (output_stream_for_information.exceptions() == std::ios_base::failbit)
     {
-        stream.write(('\r' + information).c_str(), information.size() + 1);
+        output_stream_for_information.write(('\r' + information).c_str(), information.size() + 1);
     }
 }

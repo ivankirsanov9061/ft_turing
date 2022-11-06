@@ -16,9 +16,9 @@ bool IsHelpArgumentGiven(int argc, const char * const *argv)
     return false;
 }
 
-void WriteHelpInformation()
+void WriteHelpInformation(std::ostream &output_stream_for_information)
 {
-    SafeStreamWrite(std::cout, "Usage: ft_turing [-h] json_file_path input_data_for_tape\n\n"
+    SafeStreamWrite(output_stream_for_information, "Usage: ft_turing [-h] json_file_path input_data_for_tape\n\n"
                                "Positional arguments\n"
                                "\tjson_file_path     : json description of the machine\n"
                                "\tinput_data_for_tape: input of the machine\n\n"

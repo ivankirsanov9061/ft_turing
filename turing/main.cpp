@@ -3,14 +3,19 @@
 
 #include <iostream>
 
-int main(int argc, char **argv)
+void Run(int argc, char **argv, std::ostream &output_stream_for_information)
 {
     try
     {
-        struct SArguments arguments = ParseArguments(argc, argv);
+        struct SArguments arguments = ParseArguments(argc, argv, output_stream_for_information);
     }
     catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        output_stream_for_information << e.what() << std::endl;
     }
+}
+
+int main(int argc, char **argv)
+{
+    Run(argc, argv, std::cout);
 }
