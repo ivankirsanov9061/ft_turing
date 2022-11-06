@@ -5,7 +5,7 @@
 
 bool IsHelpArgumentGiven(int argc, const char * const *argv)
 {
-    for (size_t i = 1; i < argc; ++i)
+    for (int i = 1; i < argc; ++i)
     {
         if (std::strcmp(argv[i], "-h") == 0 || std::strcmp(argv[i], "--help") == 0)
         {
