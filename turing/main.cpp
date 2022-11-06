@@ -8,6 +8,7 @@ int main(int argc, char **argv)
     try
     {
         struct SArguments arguments = ParseArguments(argc, argv, std::cout);
+        // Use arguments variable here for JSONHandle function
     }
     catch (std::exception &error)
     {
