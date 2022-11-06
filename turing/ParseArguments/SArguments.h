@@ -4,6 +4,6 @@
 
 struct SArguments
 {
-    const std::string json_file_path;
-    const std::string input_data_for_tape;
+    std::string json_file_path;
+    std::string input_data_for_tape;
 };
