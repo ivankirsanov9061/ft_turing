@@ -4,9 +4,9 @@ std::set<std::string> GetStatesFromJSONDescription(boost::property_tree::ptree &
 {
     std::set<std::string> states;
     auto states_list =  json_description.get_child("states");
-    for (auto &value : states_list)
+    for (auto &state_name : states_list)
     {
-        states.insert(value.second.get_value<std::string>());
+        states.insert(state_name.second.get_value<std::string>());
     }
     return states;
 }
