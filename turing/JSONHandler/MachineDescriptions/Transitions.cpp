@@ -1,26 +1,31 @@
 #include "Transitions.h"
 #include "SMachineDescription.h"
 
+EAction GetActionFromTransition(boost::property_tree::ptree &transition_content)
+{
+    std::string action = transition_content.get<std::string>("action");
+    if (action == "RIGHT")
+    {
+        return EAction::RIGHT;
+    }
+    else if (action == "LEFT")
+    {
+        return EAction::LEFT;
+    }
+    else
+    {
+        throw std::runtime_error("Unknown action in json file");
+    }
+}
+
 struct STransition GetSingleTransition(boost::property_tree::ptree &transition_content)
 {
     struct STransition transition;
     transition.read = transition_content.get<char>("read");
     transition.to_state = transition_content.get<std::string>("to_state");
     transition.write = transition_content.get<char>("write");
+    transition.action = GetActionFromTransition(transition_content);
 
-    auto action = transition_content.get<std::string>("action");
-    if (action == "RIGHT")
-    {
-        transition.action = EAction::RIGHT;
-    }
-    else if (action == "LEFT")
-    {
-        transition.action = EAction::LEFT;
-    }
-    else
-    {
-        throw std::runtime_error("Unknown action in json file");
-    }
     return transition;
 }
 
@@ -40,8 +45,7 @@ std::map<std::string, std::set<struct STransition>> GetTransitionsFromJSONDescri
     auto transitions_list =  json_description.get_child("transitions");
     for (auto &transition : transitions_list)
     {
-        transitions.insert({transition.first,
-                            GetTransitionList(transition.second)});
+        transitions.insert({transition.first, GetTransitionList(transition.second)});
     }
     return transitions;
 }
