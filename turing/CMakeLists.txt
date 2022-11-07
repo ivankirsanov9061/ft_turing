@@ -10,16 +10,17 @@ add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter/SafeStreamWriter.cpp
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments/ParseArguments.cpp
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments/HelpArgument.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/Handler.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/Reader.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/MachineDescription.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/MachineDescriptions/Alphabet.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/MachineDescriptions/Finals.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/MachineDescriptions/States.cpp
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/MachineDescriptions/Transitions.cpp)
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/Handler.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/Reader.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescription.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidator.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Alphabet.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Finals.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/States.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Transitions.cpp)
 
 target_include_directories(turing PRIVATE
         ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler
-        ${CMAKE_SOURCE_DIR}/turing/JSONHandler/MachineDescriptions)
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields)

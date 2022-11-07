@@ -6,7 +6,9 @@
 
 #include <set>
 
-struct SMachineDescription GetMachineDescription(boost::property_tree::ptree &json_description)
+struct SMachineDescription GetMachineDescription(boost::property_tree::ptree &json_description,
+                                                 std::set<char> &alphabet,
+                                                 std::set<std::string> &states)
 {
     SMachineDescription machine_description;
     machine_description.name = json_description.get<std::string>("name");
@@ -15,8 +17,8 @@ struct SMachineDescription GetMachineDescription(boost::property_tree::ptree &js
     machine_description.finals = GetFinalsFromJSONDescription(json_description);
     machine_description.transitions = GetTransitionsFromJSONDescription(json_description);
 
-    std::set<char> alphabet = GetAlphabetFromJSONDescription(json_description);
-    std::set<std::string> states = GetStatesFromJSONDescription(json_description);
+    alphabet = GetAlphabetFromJSONDescription(json_description);
+    states = GetStatesFromJSONDescription(json_description);
 
     return machine_description;
 }

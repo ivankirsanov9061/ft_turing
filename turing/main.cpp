@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     try
     {
         struct SArguments arguments = ParseArguments(argc, argv, std::cout);
-        struct SMachineDescription machine_description = HandleJSON(arguments.json_file_path);
+        struct SMachineDescription machine_description = ParseAndValidateMD(arguments.json_file_path, arguments.input_data_for_tape);
         // Handle machine description here
     }
     catch (std::exception &error)
