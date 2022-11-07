@@ -1,28 +1,7 @@
 #pragma once
 
-#include <string>
-#include <set>
-#include <map>
+#include "SMachineDescription.h"
 
-enum EAction
-{
-    RIGHT,
-    LEFT
-};
+#include <boost/property_tree/ptree.hpp>
 
-struct STransition
-{
-    char read;
-    std::string to_state;
-    char write;
-    EAction action;
-};
-
-struct SMachineDescription
-{
-    std::string name;
-    char blank;
-    std::string initial;
-    std::set<std::string> finals;
-    std::map<std::string, struct STransition> transitions;
-};
+struct SMachineDescription GetMachineDescription(boost::property_tree::ptree &json_description);
