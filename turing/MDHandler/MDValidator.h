@@ -3,7 +3,7 @@
 #include <set>
 #include <string>
 
-void ValidateMachineDescription(std::string &input_data_for_tape,
-                                struct SMachineDescription &machine_description,
-                                std::set<char> &alphabet,
-                                std::set<std::string> &states);
+void ValidateMachineDescription(const std::string &input_data_for_tape,
+                                const struct SMachineDescription &machine_description,
+                                const std::set<char> &alphabet,
+                                const std::set<std::string> &states);

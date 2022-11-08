@@ -1,7 +1,7 @@
 #include "Transitions.h"
 #include "SMachineDescription.h"
 
-EAction GetActionFromTransition(boost::property_tree::ptree &transition_content)
+EAction GetActionFromTransition(const boost::property_tree::ptree &transition_content)
 {
     std::string action = transition_content.get<std::string>("action");
     if (action == "RIGHT")
@@ -39,7 +39,7 @@ std::set<struct STransition> GetTransitionList(boost::property_tree::ptree &tran
     return transition_list;
 }
 
-std::map<std::string, std::set<struct STransition>> GetTransitionsFromJSONDescription(boost::property_tree::ptree &json_description)
+std::map<std::string, std::set<struct STransition>> GetTransitionsFromJSONDescription(const boost::property_tree::ptree &json_description)
 {
     std::map<std::string, std::set<struct STransition>> transitions;
     auto transitions_list =  json_description.get_child("transitions");

@@ -1,12 +1,12 @@
 #include "MachineDescription.h"
-#include "Alphabet.h"
-#include "Finals.h"
-#include "States.h"
-#include "Transitions.h"
+#include "MachineDescriptionFields/Alphabet.h"
+#include "MachineDescriptionFields/Finals.h"
+#include "MachineDescriptionFields/States.h"
+#include "MachineDescriptionFields/Transitions.h"
 
 #include <set>
 
-struct SMachineDescription GetMachineDescription(boost::property_tree::ptree &json_description,
+struct SMachineDescription GetMachineDescription(const boost::property_tree::ptree &json_description,
                                                  std::set<char> &alphabet,
                                                  std::set<std::string> &states)
 {
