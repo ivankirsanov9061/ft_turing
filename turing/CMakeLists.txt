@@ -7,7 +7,9 @@ set(CMAKE_CXX_STANDARD ${CXX_VERSION})
 
 find_package(Boost REQUIRED)
 
-set(CMAKE_CXX_CPPCHECK "cppcheck" "--std=c++${CXX_VERSION}" "--enable=warning,style,performance,portability")
+if (CXX_CHECK)
+    set(CMAKE_CXX_CPPCHECK "cppcheck" "--std=c++${CXX_VERSION}" "--enable=warning,style,performance,portability" "--inconclusive")
+endif()
 
 add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/main.cpp
