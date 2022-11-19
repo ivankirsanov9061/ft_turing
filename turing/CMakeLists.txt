@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 3.23)
 project(turing)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CXX_VERSION 20)
+
+set(CMAKE_CXX_STANDARD ${CXX_VERSION})
 
 find_package(Boost REQUIRED)
+
+set(CMAKE_CXX_CPPCHECK "cppcheck" "--std=c++${CXX_VERSION}" "--enable=warning,style,performance,portability")
 
 add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/main.cpp
@@ -25,6 +29,6 @@ add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Transitions.cpp)
 
 target_include_directories(turing PRIVATE
-        ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter
+         ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments
         ${CMAKE_SOURCE_DIR}/turing/MDHandler)
