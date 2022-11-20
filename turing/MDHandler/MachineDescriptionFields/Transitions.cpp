@@ -39,13 +39,13 @@ std::vector<struct STransition> GetTransitionList(boost::property_tree::ptree &t
     return transition_list;
 }
 
-std::map<std::string, std::vector<struct STransition>> GetTransitionsFromJSONDescription(const boost::property_tree::ptree &json_description)
+std::vector<std::pair<std::string, std::vector<struct STransition>>> GetTransitionsFromJSONDescription(const boost::property_tree::ptree &json_description)
 {
-    std::map<std::string, std::vector<struct STransition>> transitions;
+    std::vector<std::pair<std::string, std::vector<struct STransition>>> transitions;
     auto transitions_list =  json_description.get_child("transitions");
     for (auto &transition : transitions_list)
     {
-        transitions.insert({transition.first, GetTransitionList(transition.second)});
+        transitions.emplace_back(std::make_pair(transition.first, GetTransitionList(transition.second)));
     }
     return transitions;
 }

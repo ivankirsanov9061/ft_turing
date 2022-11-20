@@ -1,6 +1,6 @@
 #pragma once
 
-#include <set>
+#include <vector>
 #include <string>
 
-void ValidateFinals(const std::set<std::string> &finals, const std::set<std::string> &states);
+void ValidateFinals(const std::vector<std::string> &finals, const std::vector<std::string> &states);

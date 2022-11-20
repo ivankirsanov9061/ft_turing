@@ -6,9 +6,11 @@
 #include "MDValidatorFields/Finals.h"
 #include "MDValidatorFields/Transitions.h"
 
+#include <vector>
+#include <algorithm>
 #include <stdexcept>
 
-void ValidateAlphabet(const std::set<char> &alphabet)
+void ValidateAlphabet(const std::vector<char> &alphabet)
 {
     if (alphabet.empty())
     {
@@ -16,9 +18,9 @@ void ValidateAlphabet(const std::set<char> &alphabet)
     }
 }
 
-void ValidateStates(const std::set<std::string> &states,
-                    const std::set<std::string> &finals,
-                    const std::map<std::string, std::vector<struct STransition>> &transitions)
+void ValidateStates(const std::vector<std::string> &states,
+                    const std::vector<std::string> &finals,
+                    const std::vector<std::pair<std::string, std::vector<struct STransition>>> &transitions)
 {
     if (states.empty())
     {
@@ -39,11 +41,11 @@ void ValidateStates(const std::set<std::string> &states,
     }
 }
 
-void ValidateInput(const std::string &input_data_for_tape, const std::set<char> &alphabet)
+void ValidateInput(const std::string &input_data_for_tape, const std::vector<char> &alphabet)
 {
     for (auto &character : input_data_for_tape)
     {
-        if (alphabet.find(character) == alphabet.end())
+        if (std::find(alphabet.cbegin(), alphabet.cend(), character) == alphabet.end())
         {
             throw std::runtime_error("Character from input does not found in the alphabet");
         }
@@ -52,8 +54,8 @@ void ValidateInput(const std::string &input_data_for_tape, const std::set<char> 
 
 void ValidateMachineDescription(const std::string &input_data_for_tape,
                                 const struct SMachineDescription &machine_description,
-                                const std::set<char> &alphabet,
-                                const std::set<std::string> &states)
+                                const std::vector<char> &alphabet,
+                                const std::vector<std::string> &states)
 {
     ValidateAlphabet(alphabet);
     ValidateStates(states, machine_description.finals, machine_description.transitions);

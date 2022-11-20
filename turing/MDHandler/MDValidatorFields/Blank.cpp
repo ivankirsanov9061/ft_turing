@@ -1,10 +1,11 @@
 #include "Blank.h"
 
+#include <algorithm>
 #include <stdexcept>
 
-void ValidateBlank(char blank, const std::string &input_data_for_tape, const std::set<char> &alphabet)
+void ValidateBlank(char blank, const std::string &input_data_for_tape, const std::vector<char> &alphabet)
 {
-    if (alphabet.find(blank) == alphabet.end())
+    if (std::find(alphabet.cbegin(), alphabet.cend(), blank) == alphabet.end())
     {
         throw std::runtime_error("Blank does not found in the alphabet");
     }

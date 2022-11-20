@@ -7,7 +7,7 @@ void PrintName(const std::string &name)
     std::cout << "Name: " << name << std::endl;
 }
 
-void PrintAlphabet(const std::set<char> &alphabet)
+void PrintAlphabet(const std::vector<char> &alphabet)
 {
     std::cout << "Alphabet: [ ";
     bool first_element = true;
@@ -23,7 +23,7 @@ void PrintAlphabet(const std::set<char> &alphabet)
     std::cout << " ]" << std::endl;
 }
 
-void PrintStates(const std::set<std::string> &states)
+void PrintStates(const std::vector<std::string> &states)
 {
     std::cout << "States: [ ";
     bool first_element = true;
@@ -44,7 +44,7 @@ void PrintInitial(const std::string &initial)
     std::cout << "Initial: " << initial << std::endl;
 }
 
-void PrintFinals(const std::set<std::string> &finals)
+void PrintFinals(const std::vector<std::string> &finals)
 {
     std::cout << "Finals: [ ";
     bool first_element = true;
@@ -60,7 +60,7 @@ void PrintFinals(const std::set<std::string> &finals)
     std::cout << " ]" << std::endl;
 }
 
-void PrintTransitions(const std::map<std::string, std::vector<struct STransition>> transitions_list)
+void PrintTransitions(const std::vector<std::pair<std::string, std::vector<struct STransition>>> transitions_list)
 {
     for (auto &transitions : transitions_list)
     {
@@ -83,8 +83,8 @@ void PrintTransitions(const std::map<std::string, std::vector<struct STransition
 }
 
 void PrintDescription(const struct SMachineDescription machine_description,
-                      const std::set<char> alphabet,
-                      const std::set<std::string> states)
+                      const std::vector<char> alphabet,
+                      const std::vector<std::string>  states)
 {
     PrintName(machine_description.name);
     PrintAlphabet(alphabet);

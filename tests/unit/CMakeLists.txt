@@ -22,7 +22,8 @@ add_executable(unit_tests
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Blank.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Initial.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Finals.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Transitions.cpp)
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Transitions.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/PrintDescription.cpp)
 
 target_include_directories(unit_tests PRIVATE
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments

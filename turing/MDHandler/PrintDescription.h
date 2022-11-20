@@ -3,5 +3,5 @@
 #include "SMachineDescription.h"
 
 void PrintDescription(const struct SMachineDescription machine_description,
-                      const std::set<char> alphabet,
-                      const std::set<std::string> states);
+                      const std::vector<char> alphabet,
+                      const std::vector<std::string>  states);

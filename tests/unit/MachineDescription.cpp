@@ -111,8 +111,8 @@ TEST(MachineDescription, good_config)
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_NO_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_NO_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
@@ -212,8 +212,8 @@ TEST(MachineDescription, bad_key_name_reaad)
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_ANY_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
@@ -313,8 +313,8 @@ TEST(MachineDescription, bad_key_name_writtte)
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_ANY_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
@@ -414,8 +414,8 @@ TEST(MachineDescription, double_char_in_alphabet)
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_NO_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
@@ -515,8 +515,8 @@ TEST(MachineDescription, bad_value_in_states)
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_NO_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
@@ -616,8 +616,8 @@ TEST(MachineDescription, bad_value_to_state_in_transitions)
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_NO_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
@@ -716,8 +716,8 @@ TEST(MachineDescription, bad_action_lefft_in_transitions) {
                                        "    ]\n"
                                        "  }\n"
                                        "}");
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
     struct SMachineDescription machine_description;
     EXPECT_ANY_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));

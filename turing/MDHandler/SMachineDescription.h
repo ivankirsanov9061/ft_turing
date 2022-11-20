@@ -1,8 +1,6 @@
 #pragma once
 
 #include <string>
-#include <set>
-#include <map>
 #include <vector>
 
 enum EAction
@@ -24,6 +22,6 @@ struct SMachineDescription
     std::string name;
     char blank;
     std::string initial;
-    std::set<std::string> finals;
-    std::map<std::string, std::vector<struct STransition>> transitions;
+    std::vector<std::string> finals;
+    std::vector<std::pair<std::string, std::vector<struct STransition>>> transitions;
 };

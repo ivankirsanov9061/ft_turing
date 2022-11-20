@@ -2,6 +2,6 @@
 
 #include "SMachineDescription.h"
 
-void ValidateTransitions(const std::map<std::string, std::vector<struct STransition>> &transitions,
-                         const std::set<char> &alphabet,
-                         const std::set<std::string> &states);
+void ValidateTransitions(const std::vector<std::pair<std::string, std::vector<struct STransition>>> &transitions,
+                         const std::vector<char> &alphabet,
+                         const std::vector<std::string> &states);

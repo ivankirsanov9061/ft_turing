@@ -1,8 +1,9 @@
 #include "Finals.h"
 
+#include <algorithm>
 #include <stdexcept>
 
-void ValidateFinals(const std::set<std::string> &finals, const std::set<std::string> &states)
+void ValidateFinals(const std::vector<std::string> &finals, const std::vector<std::string> &states)
 {
     if (finals.empty())
     {
@@ -11,7 +12,7 @@ void ValidateFinals(const std::set<std::string> &finals, const std::set<std::str
 
     for (auto &final : finals)
     {
-        if (states.find(final) == states.end())
+        if (std::find(states.cbegin(), states.cend(), final) == states.end())
         {
             throw std::runtime_error("Some final state does not found in the states");
         }

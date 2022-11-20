@@ -1,6 +1,6 @@
 #pragma once
 
-#include <set>
+#include <vector>
 #include <string>
 
-void ValidateInitial(const std::string &initial, const std::set<std::string> &states);
+void ValidateInitial(const std::string &initial, const std::vector<std::string> &states);

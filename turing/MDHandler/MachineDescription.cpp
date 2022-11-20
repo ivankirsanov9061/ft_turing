@@ -4,11 +4,9 @@
 #include "MachineDescriptionFields/States.h"
 #include "MachineDescriptionFields/Transitions.h"
 
-#include <set>
-
 struct SMachineDescription GetMachineDescription(const boost::property_tree::ptree &json_description,
-                                                 std::set<char> &alphabet,
-                                                 std::set<std::string> &states)
+                                                 std::vector<char> &alphabet,
+                                                 std::vector<std::string> &states)
 {
     SMachineDescription machine_description;
     machine_description.name = json_description.get<std::string>("name");

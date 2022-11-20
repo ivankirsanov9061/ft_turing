@@ -1,16 +1,17 @@
 #include "Transitions.h"
 
+#include <algorithm>
 #include <stdexcept>
 
-void ValidateRead(char read, const std::set<char> &alphabet)
+void ValidateRead(char read, const std::vector<char> &alphabet)
 {
-    if (alphabet.find(read) == alphabet.end())
+    if (std::find(alphabet.cbegin(), alphabet.cend(), read) == alphabet.end())
     {
         throw std::runtime_error("One of read character does not found in the alphabet");
     }
 }
 
-void ValidateToState(const std::string &to_state, const std::set<std::string> &states)
+void ValidateToState(const std::string &to_state, const std::vector<std::string> &states)
 {
     if (to_state.empty())
     {
@@ -18,23 +19,23 @@ void ValidateToState(const std::string &to_state, const std::set<std::string> &s
     }
 
     // TODO this
-    if (states.find(to_state) == states.end())
+    if (std::find(states.cbegin(), states.cend(), to_state) == states.end())
     {
         throw std::runtime_error("One of value \"to_state\" does not found in the states");
     }
 }
 
-void ValidateWrite(char write, const std::set<char> &alphabet)
+void ValidateWrite(char write, const std::vector<char> &alphabet)
 {
-    if (alphabet.find(write) == alphabet.end())
+    if (std::find(alphabet.cbegin(), alphabet.cend(), write) == alphabet.end())
     {
         throw std::runtime_error("One of write character does not found in the alphabet");
     }
 }
 
-void ValidateTransitions(const std::map<std::string, std::vector<struct STransition>> &transitions,
-                         const std::set<char> &alphabet,
-                         const std::set<std::string> &states)
+void ValidateTransitions(const std::vector<std::pair<std::string, std::vector<struct STransition>>> &transitions,
+                         const std::vector<char> &alphabet,
+                         const std::vector<std::string> &states)
 {
     if (transitions.empty())
     {

@@ -9,8 +9,8 @@
 
 struct SMachineDescription ParseAndValidateMD(const std::string &json_file_path, const std::string &input_data_for_tape)
 {
-    std::set<char> alphabet;
-    std::set<std::string> states;
+    std::vector<char> alphabet;
+    std::vector<std::string>  states;
 
     boost::property_tree::ptree json_description = ReadJSONFile(json_file_path);
     auto machine_description = GetMachineDescription(json_description, alphabet, states);
