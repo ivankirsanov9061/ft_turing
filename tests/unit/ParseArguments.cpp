@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(IsHelpArgumentGiven, without_arguments)
+TEST(IsHelpArgumentGivenIsHelpArgumentGiven, without_arguments)
 {
     const char *argv[]={
             "./turing",

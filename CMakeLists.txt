@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.23)
 project(ft_turing)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CXX_VERSION 20)
+
+set(CMAKE_CXX_STANDARD ${CXX_VERSION})
 
 add_subdirectory(turing)
 

@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 project(turing)
 
-set(CXX_VERSION 20)
-
-set(CMAKE_CXX_STANDARD ${CXX_VERSION})
-
 find_package(Boost REQUIRED)
 
 if (CXX_CHECK)
