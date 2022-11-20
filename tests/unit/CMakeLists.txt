@@ -13,7 +13,7 @@ add_executable(unit_tests
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/Handler.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/Reader.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescription.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidator.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/ValidatorDescription.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Alphabet.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Finals.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/States.cpp

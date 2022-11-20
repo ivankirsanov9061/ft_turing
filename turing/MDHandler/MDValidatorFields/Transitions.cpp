@@ -32,7 +32,7 @@ void ValidateWrite(char write, const std::set<char> &alphabet)
     }
 }
 
-void ValidateTransitions(const std::map<std::string, std::set<struct STransition>> &transitions,
+void ValidateTransitions(const std::map<std::string, std::vector<struct STransition>> &transitions,
                          const std::set<char> &alphabet,
                          const std::set<std::string> &states)
 {

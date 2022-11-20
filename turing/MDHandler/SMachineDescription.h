@@ -13,21 +13,6 @@ enum EAction
 
 struct STransition
 {
-    bool operator < (struct STransition rhs) const
-    {
-        size_t hash_rhs = std::hash<char>{}(rhs.read)
-                ^ std::hash<std::string>{}(rhs.to_state)
-                ^ std::hash<char>{}(rhs.write)
-                ^ std::hash<EAction>{}(rhs.action);
-
-        size_t hash_lhs = std::hash<char>{}(this->read)
-                          ^ std::hash<std::string>{}(this->to_state)
-                          ^ std::hash<char>{}(this->write)
-                          ^ std::hash<EAction>{}(this->action);
-
-        return hash_lhs < hash_rhs;
-    }
-
     char read;
     std::string to_state;
     char write;

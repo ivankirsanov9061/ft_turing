@@ -1,4 +1,4 @@
-#include "MDValidator.h"
+#include "ValidatorDescription.h"
 #include "SMachineDescription.h"
 #include "MDValidatorFields/Name.h"
 #include "MDValidatorFields/Blank.h"
@@ -63,5 +63,5 @@ void ValidateMachineDescription(const std::string &input_data_for_tape,
     ValidateBlank(machine_description.blank, input_data_for_tape, alphabet);
     ValidateInitial(machine_description.initial, states);
     ValidateFinals(machine_description.finals, states);
-    //ValidateTransitions(machine_description.transitions, alphabet, states);
+    ValidateTransitions(machine_description.transitions, alphabet, states);
 }

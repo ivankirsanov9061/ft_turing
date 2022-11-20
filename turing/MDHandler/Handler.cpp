@@ -1,8 +1,9 @@
 #include "Handler.h"
 #include "SMachineDescription.h"
 #include "Reader.h"
-#include "MDValidator.h"
+#include "ValidatorDescription.h"
 #include "MachineDescription.h"
+#include "PrintDescription.h"
 
 #include <boost/property_tree/ptree.hpp>
 
@@ -14,6 +15,7 @@ struct SMachineDescription ParseAndValidateMD(const std::string &json_file_path,
     boost::property_tree::ptree json_description = ReadJSONFile(json_file_path);
     auto machine_description = GetMachineDescription(json_description, alphabet, states);
     ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states);
+    PrintDescription(machine_description, alphabet, states);
 
     return machine_description;
 }

@@ -15,7 +15,7 @@ add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/Handler.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/Reader.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescription.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidator.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/ValidatorDescription.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Alphabet.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Finals.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/States.cpp
@@ -25,6 +25,7 @@ add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Initial.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Finals.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Transitions.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/PrintDescription.cpp
         ${CMAKE_SOURCE_DIR}/turing/Procuder/ProcudeMachineDescription.cpp
         ${CMAKE_SOURCE_DIR}/turing/Procuder/MachineTapeAPI.cpp
         ${CMAKE_SOURCE_DIR}/turing/Procuder/PrintJob.cpp)

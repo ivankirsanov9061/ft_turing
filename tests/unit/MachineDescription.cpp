@@ -1,5 +1,5 @@
 #include "MachineDescription.h"
-#include "MDValidator.h"
+#include "ValidatorDescription.h"
 
 #include <gtest/gtest.h>
 #include <boost/property_tree/ptree.hpp>
@@ -434,8 +434,8 @@ TEST(MachineDescription, bad_value_in_states)
                                        "  \"blank\": \".\",\n"
                                        "  \"states\": [\n"
                                        "    \"scanright\",\n"
-                                       /* bad value 'erasene' here */
-                                       "    \"erasene\",\n"
+                                       /* bad value 'erasne' here */
+                                       "    \"erasne\",\n"
                                        "    \"subone\",\n"
                                        "    \"skip\",\n"
                                        "    \"HALT\"\n"
