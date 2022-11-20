@@ -37,6 +37,14 @@ void DoShift(EAction action, char blank)
 void DoTransition(const struct SMachineDescription &machine_description, const std::string &state_name)
 {
     auto transition = FindTransition(machine_description, state_name);
+    char value_of_head = GetValueOfHead();
+    size_t pos_of_head = GetPositionOfHead();
+    PrintStep(state_name,
+              value_of_head,
+              transition->to_state,
+              transition->write,
+              transition->action,
+              pos_of_head);
     RecordIntoTape(transition->write);
     DoShift(transition->action, machine_description.blank);
     if (IsFinalState(machine_description, transition->to_state))

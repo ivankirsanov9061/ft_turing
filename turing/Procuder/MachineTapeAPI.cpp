@@ -1,4 +1,5 @@
 #include "MachineTapeAPI.h"
+#include "PrintJob.h"
 
 std::string g_tape;
 size_t g_position = 0;
@@ -39,7 +40,19 @@ char GetValueOfHead()
     return g_tape.at(g_position);
 }
 
-void PrintTape()
+size_t GetPositionOfHead() noexcept(true)
 {
-    std::cout << g_tape << std::endl;
+    return g_position;
+}
+
+void PrintStep(const std::string &current_state,
+               char current_chr,
+               const std::string &next_state,
+               char next_chr,
+               EAction next_action,
+               size_t pos_for_mark)
+{
+    PrintTape(g_tape, pos_for_mark);
+    PrintTransitionInfo(current_state, current_chr, next_state, next_chr, next_action);
+    std::cout << std::endl;
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "SMachineDescription.h"
+
 #include <string>
 #include <iostream>
 
@@ -8,5 +10,11 @@ void LeftHeadShift(char blank);
 void RightHeadShift(char blank);
 void RecordIntoTape(char chr);
 char GetValueOfHead();
+size_t GetPositionOfHead() noexcept(true);
 
-void PrintTape();
+void PrintStep(const std::string &current_state,
+               char current_chr,
+               const std::string &next_state,
+               char next_chr,
+               EAction next_action,
+               size_t pos_for_mark);

@@ -26,7 +26,8 @@ add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Finals.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Transitions.cpp
         ${CMAKE_SOURCE_DIR}/turing/Procuder/ProcudeMachineDescription.cpp
-        ${CMAKE_SOURCE_DIR}/turing/Procuder/MachineTapeAPI.cpp)
+        ${CMAKE_SOURCE_DIR}/turing/Procuder/MachineTapeAPI.cpp
+        ${CMAKE_SOURCE_DIR}/turing/Procuder/PrintJob.cpp)
 
 target_include_directories(turing PRIVATE
         ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter
