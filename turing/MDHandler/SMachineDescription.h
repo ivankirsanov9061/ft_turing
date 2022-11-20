@@ -9,6 +9,8 @@ enum EAction
     LEFT
 };
 
+//home/ivan/file.json
+
 struct STransition
 {
     char read;

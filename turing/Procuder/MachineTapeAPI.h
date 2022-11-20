@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 
-void InitTape(const std::string &input_data_for_tale);
+void InitTape(const std::string &input_data_for_tale, char blank);
 void LeftHeadShift(char blank);
 void RightHeadShift(char blank);
 void RecordIntoTape(char chr);
@@ -18,3 +18,5 @@ void PrintStep(const std::string &current_state,
                char next_chr,
                EAction next_action,
                size_t pos_for_mark);
+
+void PrintTape();

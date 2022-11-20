@@ -51,6 +51,7 @@ void DoTransition(const struct SMachineDescription &machine_description, const s
     DoShift(transition->action, machine_description.blank);
     if (IsFinalState(machine_description, transition->to_state))
     {
+        PrintTape();
         return ;
     }
     DoTransition(machine_description, transition->to_state);
@@ -58,6 +59,6 @@ void DoTransition(const struct SMachineDescription &machine_description, const s
 
 void ProcudeMachineDescription(const std::string &input_data_for_tape, const struct SMachineDescription &machine_description)
 {
-    InitTape(input_data_for_tape);
+    InitTape(input_data_for_tape, machine_description.blank);
     DoTransition(machine_description, machine_description.initial);
 }
