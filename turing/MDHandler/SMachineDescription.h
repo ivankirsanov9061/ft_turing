@@ -3,6 +3,7 @@
 #include <string>
 #include <set>
 #include <map>
+#include <vector>
 
 enum EAction
 {
@@ -39,5 +40,5 @@ struct SMachineDescription
     char blank;
     std::string initial;
     std::set<std::string> finals;
-    std::map<std::string, std::set<struct STransition>> transitions;
+    std::map<std::string, std::vector<struct STransition>> transitions;
 };

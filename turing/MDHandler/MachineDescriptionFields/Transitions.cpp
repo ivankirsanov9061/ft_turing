@@ -29,19 +29,19 @@ struct STransition GetSingleTransition(boost::property_tree::ptree &transition_c
     return transition;
 }
 
-std::set<struct STransition> GetTransitionList(boost::property_tree::ptree &transitions)
+std::vector<struct STransition> GetTransitionList(boost::property_tree::ptree &transitions)
 {
-    std::set<struct STransition> transition_list;
+    std::vector<struct STransition> transition_list;
     for (auto &transition : transitions)
     {
-        transition_list.insert(GetSingleTransition(transition.second));
+        transition_list.emplace_back(GetSingleTransition(transition.second));
     }
     return transition_list;
 }
 
-std::map<std::string, std::set<struct STransition>> GetTransitionsFromJSONDescription(const boost::property_tree::ptree &json_description)
+std::map<std::string, std::vector<struct STransition>> GetTransitionsFromJSONDescription(const boost::property_tree::ptree &json_description)
 {
-    std::map<std::string, std::set<struct STransition>> transitions;
+    std::map<std::string, std::vector<struct STransition>> transitions;
     auto transitions_list =  json_description.get_child("transitions");
     for (auto &transition : transitions_list)
     {

@@ -18,7 +18,7 @@ void ValidateAlphabet(const std::set<char> &alphabet)
 
 void ValidateStates(const std::set<std::string> &states,
                     const std::set<std::string> &finals,
-                    const std::map<std::string, std::set<struct STransition>> &transitions)
+                    const std::map<std::string, std::vector<struct STransition>> &transitions)
 {
     if (states.empty())
     {
