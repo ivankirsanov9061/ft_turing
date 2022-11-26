@@ -1,5 +1,6 @@
 #include "MachineTapeAPI.h"
 #include "PrintJob.h"
+#include "SafePrint.h"
 
 std::string g_tape;
 size_t g_position = 0;
@@ -58,12 +59,12 @@ void PrintStep(const std::string &current_state,
 {
     PrintTape(g_tape, pos_for_mark);
     PrintTransitionInfo(current_state, current_chr, next_state, next_chr, next_action);
-    std::cout << std::endl;
+    safe_cout << '\n';
 }
 
 void PrintTape()
 {
-    std::cout << "Final tape: ";
+    safe_cout << "Final tape: ";
     PrintTape(g_tape, g_position);
-    std::cout << std::endl;
+    safe_cout << '\n';
 }

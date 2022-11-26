@@ -9,7 +9,7 @@ endif()
 
 add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/main.cpp
-        ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter/SafeStreamWriter.cpp
+        ${CMAKE_SOURCE_DIR}/turing/SafePrint/SafePrint.cpp
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments/ParseArguments.cpp
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments/HelpArgument.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/Handler.cpp
@@ -31,7 +31,7 @@ add_executable(turing
         ${CMAKE_SOURCE_DIR}/turing/Procuder/PrintJob.cpp)
 
 target_include_directories(turing PRIVATE
-        ${CMAKE_SOURCE_DIR}/turing/SafeStreamWriter
+        ${CMAKE_SOURCE_DIR}/turing/SafePrint
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments
         ${CMAKE_SOURCE_DIR}/turing/MDHandler
         ${CMAKE_SOURCE_DIR}/turing/Procuder)

@@ -1,5 +1,0 @@
-#pragma once
-
-#include <ostream>
-
-void SafeStreamWrite(std::ostream &output_stream_for_information, const std::string &&information);

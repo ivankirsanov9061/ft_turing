@@ -1,63 +1,64 @@
 #include "PrintDescription.h"
+#include "SafePrint.h"
 
 #include <iostream>
 
 void PrintName(const std::string &name)
 {
-    std::cout << "Name: " << name << std::endl;
+    safe_cout << "Name: " << name << '\n';
 }
 
 void PrintAlphabet(const std::vector<char> &alphabet)
 {
-    std::cout << "Alphabet: [ ";
+    safe_cout << "Alphabet: [ ";
     bool first_element = true;
     for (char chr : alphabet)
     {
         if (!first_element)
         {
-            std::cout << ", ";
+            safe_cout << ", ";
         }
         first_element = false;
-        std::cout << chr;
+        safe_cout << chr;
     }
-    std::cout << " ]" << std::endl;
+    safe_cout << " ]" << '\n';
 }
 
 void PrintStates(const std::vector<std::string> &states)
 {
-    std::cout << "States: [ ";
+    safe_cout << "States: [ ";
     bool first_element = true;
     for (auto &state : states)
     {
         if (!first_element)
         {
-            std::cout << ", ";
+            safe_cout << ", ";
         }
         first_element = false;
-        std::cout << state;
+        safe_cout << state;
     }
-    std::cout << " ]" << std::endl;
+    safe_cout << " ]" << '\n';
 }
 
 void PrintInitial(const std::string &initial)
 {
-    std::cout << "Initial: " << initial << std::endl;
+    safe_cout << "Initial: " << initial << '\n';
 }
 
 void PrintFinals(const std::vector<std::string> &finals)
 {
-    std::cout << "Finals: [ ";
+    safe_cout << "Finals: [ ";
     bool first_element = true;
     for (auto &final : finals)
     {
         if (!first_element)
         {
-            std::cout << ", ";
+            safe_cout << ", ";
         }
         first_element = false;
-        std::cout << final;
+        safe_cout << final;
     }
-    std::cout << " ]" << std::endl;
+    safe_cout << " ]" << '\n';
 }
 
 void PrintTransitions(const std::vector<std::pair<std::string, std::vector<struct STransition>>> transitions_list)
@@ -66,18 +67,18 @@ void PrintTransitions(const std::vector<std::pair<std::string, std::vector<struc
     {
         for (auto &transition : transitions.second)
         {
-            std::cout << '(' << transitions.first << ", " << transition.read << ')'
+            safe_cout << '(' << transitions.first << ", " << transition.read << ')'
                       << " -> "
                       << "(" << transition.to_state << ", " << transition.write << ", ";
             switch (transition.action) {
                 case EAction::RIGHT:
-                    std::cout << "RIGHT";
+                    safe_cout << "RIGHT";
                     break;
                 case EAction::LEFT:
-                    std::cout << "LEFT";
+                    safe_cout << "LEFT";
                     break;
             }
-            std::cout << ")" << std::endl;
+            safe_cout << ")" << '\n';
         }
     }
 }
@@ -92,5 +93,5 @@ void PrintDescription(const struct SMachineDescription machine_description,
     PrintInitial(machine_description.initial);
     PrintFinals(machine_description.finals);
     PrintTransitions(machine_description.transitions);
-    std::cout << std::endl;
+    safe_cout << '\n';
 }
