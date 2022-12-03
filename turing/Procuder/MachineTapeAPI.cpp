@@ -59,12 +59,12 @@ void PrintStep(const std::string &current_state,
 {
     PrintTape(g_tape, pos_for_mark);
     PrintTransitionInfo(current_state, current_chr, next_state, next_chr, next_action);
-    safe_cout << '\n';
+    Write('\n');
 }
 
 void PrintTape()
 {
-    safe_cout << "Final tape: ";
+    Write("Final tape: ");
     PrintTape(g_tape, g_position);
-    safe_cout << '\n';
+    Write('\n');
 }
