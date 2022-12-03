@@ -1,6 +1,6 @@
 #include "SafePrint.h"
 
-void SafePrint::write(const char *str, size_t len)
+void WriteString(const char *str, size_t len)
 {
     std::cout.write(str, len);
 
@@ -10,5 +10,3 @@ void SafePrint::write(const char *str, size_t len)
         std::cout.write(str, len);
     }
 }
-
-SafePrint safe_cout;

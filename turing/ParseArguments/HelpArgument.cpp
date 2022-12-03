@@ -18,10 +18,10 @@ bool IsHelpArgumentGiven(int argc, const char * const *argv)
 
 void WriteHelpInformation()
 {
-    safe_cout << "Usage: ft_turing [-h] json_file_path input_data_for_tape\n\n"
+    Write("Usage: ft_turing [-h] json_file_path input_data_for_tape\n\n"
                                "Positional arguments\n"
                                "\tjson_file_path     : json description of the machine\n"
                                "\tinput_data_for_tape: input of the machine\n\n"
                                "Optional arguments\n"
-                               "\t-h, --help: show this help message and exit\n";
+                               "\t-h, --help: show this help message and exit\n");
 }

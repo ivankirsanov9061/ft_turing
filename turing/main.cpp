@@ -16,6 +16,6 @@ int main(int argc, char **argv)
     }
     catch (std::exception &error)
     {
-        std::cerr << "Fatal error\n" <<  error.what() << '\n';
+        Write("Fatal error\n", error.what(), '\n');
     }
 }

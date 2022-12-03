@@ -5,60 +5,60 @@
 
 void PrintName(const std::string &name)
 {
-    safe_cout << "Name: " << name << '\n';
+    Write("Name: ", name, '\n');
 }
 
 void PrintAlphabet(const std::vector<char> &alphabet)
 {
-    safe_cout << "Alphabet: [ ";
+    Write("Alphabet: [ ");
     bool first_element = true;
     for (char chr : alphabet)
     {
         if (!first_element)
         {
-            safe_cout << ", ";
+            Write(", ");
         }
         first_element = false;
-        safe_cout << chr;
+        Write(chr);
     }
-    safe_cout << " ]" << '\n';
+    Write(" ]", '\n');
 }
 
 void PrintStates(const std::vector<std::string> &states)
 {
-    safe_cout << "States: [ ";
+    Write("States: [ ");
     bool first_element = true;
     for (auto &state : states)
     {
         if (!first_element)
         {
-            safe_cout << ", ";
+            Write(", ");
         }
         first_element = false;
-        safe_cout << state;
+        Write(state);
     }
-    safe_cout << " ]" << '\n';
+    Write(" ]", '\n');
 }
 
 void PrintInitial(const std::string &initial)
 {
-    safe_cout << "Initial: " << initial << '\n';
+    Write("Initial: ", initial, '\n');
 }
 
 void PrintFinals(const std::vector<std::string> &finals)
 {
-    safe_cout << "Finals: [ ";
+    Write("Finals: [ ");
     bool first_element = true;
     for (auto &final : finals)
     {
         if (!first_element)
         {
-            safe_cout << ", ";
+            Write(", ");
         }
         first_element = false;
-        safe_cout << final;
+        Write(final);
     }
-    safe_cout << " ]" << '\n';
+    Write(" ]", '\n');
 }
 
 void PrintTransitions(const std::vector<std::pair<std::string, std::vector<struct STransition>>> transitions_list)
@@ -67,18 +67,18 @@ void PrintTransitions(const std::vector<std::pair<std::string, std::vector<struc
     {
         for (auto &transition : transitions.second)
         {
-            safe_cout << '(' << transitions.first << ", " << transition.read << ')'
-                      << " -> "
-                      << "(" << transition.to_state << ", " << transition.write << ", ";
+            Write('(', transitions.first, ", ", transition.read, ')'
+                     , " -> "
+                     , "(", transition.to_state, ", ", transition.write, ", ");
             switch (transition.action) {
                 case EAction::RIGHT:
-                    safe_cout << "RIGHT";
+                    Write("RIGHT");
                     break;
                 case EAction::LEFT:
-                    safe_cout << "LEFT";
+                    Write("LEFT");
                     break;
             }
-            safe_cout << ")" << '\n';
+            Write(")", '\n');
         }
     }
 }
@@ -93,5 +93,5 @@ void PrintDescription(const struct SMachineDescription machine_description,
     PrintInitial(machine_description.initial);
     PrintFinals(machine_description.finals);
     PrintTransitions(machine_description.transitions);
-    safe_cout << '\n';
+    Write('\n');
 }
