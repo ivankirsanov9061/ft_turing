@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-void Write(const char *str, size_t len);
+void WriteString(const char *str, size_t len);
 
 template <typename T>
 void Write(T &&value)
@@ -40,7 +40,3 @@ public:
         return *this;
     }
 };
-
-extern SafePrint safe_cout;
-
-

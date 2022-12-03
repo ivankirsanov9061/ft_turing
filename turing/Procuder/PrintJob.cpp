@@ -9,11 +9,11 @@ void PrintTape(const std::string &tape, size_t pos_for_mark)
     static const std::string usual = "\033[0m";
 
     Write('[');
-    Write(tape.c_str(), pos_for_mark);
+    WriteString(tape.c_str(), pos_for_mark);
     Write(yellow);
-    Write(tape.c_str() + pos_for_mark, 1);
+    WriteString(tape.c_str() + pos_for_mark, 1);
     Write(usual);
-    Write(tape.c_str() + pos_for_mark + 1, tape.size() - pos_for_mark - 1);
+    WriteString(tape.c_str() + pos_for_mark + 1, tape.size() - pos_for_mark - 1);
     Write("] ");
 }
 
