@@ -215,7 +215,7 @@ TEST(MachineDescription, bad_key_name_reaad)
     std::vector<char> alphabet;
     std::vector<std::string>  states;
     struct SMachineDescription machine_description;
-    EXPECT_ANY_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
+    EXPECT_NO_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
 }
 
@@ -316,7 +316,7 @@ TEST(MachineDescription, bad_key_name_writtte)
     std::vector<char> alphabet;
     std::vector<std::string>  states;
     struct SMachineDescription machine_description;
-    EXPECT_ANY_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
+    EXPECT_NO_THROW(machine_description = GetMachineDescription(json_description, alphabet, states));
     EXPECT_ANY_THROW(ValidateMachineDescription(input_data_for_tape, machine_description, alphabet, states));
 }
 

@@ -14,16 +14,9 @@ add_executable(unit_tests
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/Reader.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescription.cpp
         ${CMAKE_SOURCE_DIR}/turing/MDHandler/ValidatorDescription.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Alphabet.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Finals.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/States.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MachineDescriptionFields/Transitions.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Name.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Blank.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Initial.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Finals.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/MDValidatorFields/Transitions.cpp
-        ${CMAKE_SOURCE_DIR}/turing/MDHandler/PrintDescription.cpp)
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/PrintDescription.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/ValidateFieilds.cpp
+        ${CMAKE_SOURCE_DIR}/turing/MDHandler/ParseFields.cpp)
 
 target_include_directories(unit_tests PRIVATE
         ${CMAKE_SOURCE_DIR}/turing/ParseArguments

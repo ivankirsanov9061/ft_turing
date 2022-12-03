@@ -1,10 +1,6 @@
 #include "ValidatorDescription.h"
 #include "SMachineDescription.h"
-#include "MDValidatorFields/Name.h"
-#include "MDValidatorFields/Blank.h"
-#include "MDValidatorFields/Initial.h"
-#include "MDValidatorFields/Finals.h"
-#include "MDValidatorFields/Transitions.h"
+#include "ValidateFieilds.h"
 
 #include <vector>
 #include <algorithm>

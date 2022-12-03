@@ -6,7 +6,6 @@
 
 auto FindTransition(const struct SMachineDescription &machine_description, const std::string &state_name)
 {
-//    auto transitions = machine_description.transitions.(state_name);
     auto transitions = std::find_if(machine_description.transitions.begin(), machine_description.transitions.end(),
                                     [&state_name](auto &lhs) { return lhs.first == state_name; });
     auto transition = std::find_if(transitions->second.begin(), transitions->second.end(),

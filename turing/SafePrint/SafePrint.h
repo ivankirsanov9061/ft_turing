@@ -10,13 +10,13 @@ public:
     template <typename T>
     SafePrint &operator << (T &&value)
     {
-        std::cout << value;
-
-        if (std::cout.exceptions() == std::ios_base::failbit)
-        {
-            std::cout << '\r';
-            std::cout << value;
-        }
+//        std::cout << value;
+//
+//        if (std::cout.exceptions() == std::ios_base::failbit)
+//        {
+//            std::cout << '\r';
+//            std::cout << value;
+//        }
         return *this;
     }
 };
